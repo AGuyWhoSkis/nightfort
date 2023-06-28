@@ -32,11 +32,11 @@ public class ProfileServiceTest {
     @BeforeEach
     void setup() {
         profile1 = new Profile();
-        profile1.setId(1);
+        profile1.setId(1L);
         profile1.setDisplayName("Profile1");
 
         profile2 = new Profile();
-        profile2.setId(2);
+        profile2.setId(2L);
         profile2.setDisplayName("Profile2");
     }
 
