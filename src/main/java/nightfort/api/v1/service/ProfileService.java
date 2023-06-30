@@ -23,7 +23,7 @@ public class ProfileService {
     }
 
     public Profile getProfile(Long id) {
-        return profileRepository.findById(id).orElseThrow(() -> new ProfileNotFoundException(id.toString()));
+        return profileRepository.findById(id).orElseThrow(() -> new ProfileNotFoundException(id));
     }
 
     public Profile createProfile(Profile profile) {
@@ -31,7 +31,7 @@ public class ProfileService {
     }
 
     public Profile updateProfile(Long id, Profile profile) {
-        Profile profileToUpdate = profileRepository.findById(id).orElseThrow(() -> new ProfileNotFoundException("Profile '" + id + "' not found."));
+        Profile profileToUpdate = profileRepository.findById(id).orElseThrow(() -> new ProfileNotFoundException(id));
         profileToUpdate.setDisplayName(profile.getDisplayName());
         return profileRepository.save(profileToUpdate);
     }
