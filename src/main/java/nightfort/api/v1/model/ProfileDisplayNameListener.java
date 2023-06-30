@@ -6,11 +6,20 @@ import jakarta.persistence.PreUpdate;
 import java.time.LocalDateTime;
 
 class ProfileDisplayNameListener {
-
+    
     @PreUpdate
-    @PrePersist
     void preUpdate(Profile target) {
         // When displayName is changed, update lastNameChangeTime
+        if (target.getOldDisplayName() != null && !target.getOldDisplayName().equals(target.getDisplayName())) {
+            target.setLastNameChangeTime(LocalDateTime.now());
+        }
+    }
+    
+    @PrePersist
+    void prePersist(Profile target) {
+        target.setCreateTime(LocalDateTime.now());
+        
+        
         if (target.getOldDisplayName() != null && !target.getOldDisplayName().equals(target.getDisplayName())) {
             target.setLastNameChangeTime(LocalDateTime.now());
         }

@@ -24,6 +24,7 @@ public class Profile {
 
     @Column(columnDefinition = "TIMESTAMP")
     @Getter
+    @Setter
     private LocalDateTime createTime;
 
     @Column(columnDefinition = "TIMESTAMP")
