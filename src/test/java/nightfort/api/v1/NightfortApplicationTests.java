@@ -5,10 +5,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class NightfortApplicationTests {
-
-	@Test
-	void contextLoads() {
-		// TODO
-	}
-
+    
+    @Test
+    void contextLoads() {
+        // TODO
+    }
+    
 }

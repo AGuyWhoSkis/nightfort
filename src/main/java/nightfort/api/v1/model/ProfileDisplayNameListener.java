@@ -19,7 +19,6 @@ class ProfileDisplayNameListener {
     void prePersist(Profile target) {
         target.setCreateTime(LocalDateTime.now());
         
-        
         if (target.getOldDisplayName() != null && !target.getOldDisplayName().equals(target.getDisplayName())) {
             target.setLastNameChangeTime(LocalDateTime.now());
         }
